@@ -1,8 +1,0 @@
-import React, { useState } from 'react'
-import { X, UserRound } from 'lucide-react'
-export default function ProfileModal({ profile,onClose,onSave }) {
- const [form,setForm]=useState(profile)
- const update=e=>setForm({...form,[e.target.name]:e.target.value})
- const submit=e=>{e.preventDefault();onSave({...form,username:form.username.replace(/^@/,'').replace(/\s/g,'')});onClose()}
- return <div className="modal-backdrop" onMouseDown={e=>e.target===e.currentTarget&&onClose()}><section className="modal profile-modal" role="dialog" aria-modal="true" aria-labelledby="profile-title"><button className="modal-close" onClick={onClose} aria-label="Close"><X/></button><div className="modal-icon"><UserRound size={21}/></div><div className="modal-kicker">YOUR CORNER OF LOOPLY</div><h2 id="profile-title">Edit profile</h2><p className="modal-desc">A little introduction to the person behind the collection.</p><form onSubmit={submit}><label className="field-label" htmlFor="displayName">Display name</label><input className="text-input" id="displayName" name="displayName" maxLength="40" value={form.displayName} onChange={update} required/><label className="field-label" htmlFor="username">Username</label><input className="text-input" id="username" name="username" maxLength="24" value={form.username} onChange={update} required/><label className="field-label" htmlFor="bio">Bio</label><textarea className="text-input bio-input" id="bio" name="bio" maxLength="120" value={form.bio} onChange={update}/><div className="modal-actions"><button type="button" className="secondary-button" onClick={onClose}>Cancel</button><button className="primary-button" type="submit">Save profile</button></div></form></section></div>
-}
