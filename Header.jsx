@@ -1,5 +1,0 @@
-import React from 'react'
-import { Search, Plus, Menu, Share2 } from 'lucide-react'
-export default function Header({ search, setSearch, onAdd, onShare, onMenu }) {
- return <header className="topbar"><div className="crumb"><button className="mobile-menu" onClick={onMenu} aria-label="Open navigation"><Menu/></button><span>Workspace</span><b>/</b><strong>My Collection</strong></div><div className="top-actions"><label className="searchbox"><Search size={17}/><input aria-label="Search collection" placeholder="Search your collection..." value={search} onChange={e=>setSearch(e.target.value)}/><kbd>⌘ K</kbd></label><button className="share-collection" onClick={onShare}><Share2 size={16}/><span>Share</span></button><button className="primary-button add-top" onClick={onAdd}><Plus size={17}/>Add a Short</button></div></header>
-}
