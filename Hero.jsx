@@ -1,0 +1,5 @@
+import React from 'react'
+import { Plus, Play, Sparkles } from 'lucide-react'
+export default function Hero({ onAdd, count }) {
+ return <section className="hero"><div className="hero-copy"><div className="eyebrow"><Sparkles size={13}/> YOUR PERSONAL VIDEO SPACE</div><h1>Your world, in<br/><span>short videos.</span></h1><p>A home for the clips you love, the ideas you save, and the moments you want to share.</p><button className="primary-button hero-cta" onClick={onAdd}><Plus size={17}/>Add your first short</button><div className="hero-foot"><span className="live-dot"/>{count} {count===1?'short':'shorts'} in your collection</div></div><div className="hero-art" aria-hidden="true"><div className="art-glow"/><div className="art-card art-back"><div className="art-sun"/><span>little things</span></div><div className="art-card art-mid"><div className="art-landscape"><i/><b/></div><span>stay curious</span></div><div className="art-card art-front"><div className="art-play"><Play size={20} fill="currentColor"/></div><div className="art-bars"><i/><i/><i/></div><span>your next favourite</span></div><div className="art-tag">LOOPLY / 001</div></div></section>
+}
